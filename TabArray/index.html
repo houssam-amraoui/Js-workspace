@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation de tableaux en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .result {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .note {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manipulation de tableaux en JavaScript</h1>
+        
+        <h2>Résultats :</h2>
+        <div class="result" id="longueurs"></div>
+        <div class="result" id="elements"></div>
+        
+        <p class="note">Ouvrez la console du navigateur (F12) pour voir tous les résultats.</p>
+    </div>
+
+    <script>
+        // Le code JavaScript fourni
+        let fruits = ['Pomme', 'Poire', 'Banane', 'Orange'];
+        var numbers = [1, 15, 12, -1, 10];
+        let mixte = ['isga', 2023, true];
+        
+        // Longueur d'un tableau
+        console.log(fruits.length);
+        console.log(numbers.length);
+        console.log(mixte.length);
+        
+        // Accéder à un élément du tableau via son index
+        let firstFruit = fruits[0];
+        let secondFruit = fruits[1];
+        let lastFruit = fruits[fruits.length - 1];
+        console.log(firstFruit + ' ' + secondFruit + ' ' + lastFruit);
+        
+        // Afficher les résultats dans la page HTML également
+        document.getElementById('longueurs').innerHTML = 
+            "Longueurs des tableaux :<br>" +
+            "fruits: " + fruits.length + "<br>" +
+            "numbers: " + numbers.length + "<br>" +
+            "mixte: " + mixte.length;
+            
+        document.getElementById('elements').innerHTML = 
+            "Éléments du tableau fruits :<br>" +
+            "Premier fruit: " + firstFruit + "<br>" +
+            "Deuxième fruit: " + secondFruit + "<br>" +
+            "Dernier fruit: " + lastFruit;
+    </script>
+</body>
+</html>

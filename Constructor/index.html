@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Calculateur d'aire de rectangle</h2>
+  
+  Hauteur: <input type="number" id="hauteur" value="10"><br>
+  Largeur: <input type="number" id="largeur" value="10"><br>
+  
+  <button onclick="calculer()">Calculer</button>
+  
+  <p>Aire: <span id="resultat">100</span> cm²</p>
+  
+  <script>
+    function calculer() {
+      const hauteur = document.getElementById('hauteur').value;
+      const largeur = document.getElementById('largeur').value;
+      const aire = hauteur * largeur;
+      document.getElementById('resultat').textContent = aire;
+    }
+</body>
+</html>

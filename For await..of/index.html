@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Generator Demo</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        async function* asyncGenerator() {
+            var i = 0;
+            while(i<3) {
+                yield i++;
+            }
+        }
+
+        (async function() {
+            const output = document.getElementById('output');
+            for await (let num of asyncGenerator()) {
+                const p = document.createElement('p');
+                p.textContent = num;
+                output.appendChild(p);
+                console.log(num);
+            }
+        })();
+    </script>
+</body>
+</html>

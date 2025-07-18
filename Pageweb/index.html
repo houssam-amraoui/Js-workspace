@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableaux Dynamiques</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultat {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul {
+      list-style-type: disc;
+      text-align: left;
+      padding-left: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Manipulation de Tableaux</h1>
+
+  <button onclick="afficherVoitures()">Afficher les voitures</button>
+  <button onclick="afficherFruitsSansDernier()">Fruits sans le dernier</button>
+  <button onclick="afficherFruitsInverses()">Fruits triés Z-A</button>
+  <button onclick="afficherFruitsListe()">Fruits en liste à puces</button>
+
+  <div id="resultat"></div>
+
+  <script>
+    const voitures = ["Peugeot", "Toyota", "Mercedes", "BMW"];
+    const fruits = ["Pomme", "Banane", "Orange", "Mangue", "Fraise"];
+
+    function afficherVoitures() {
+      let html = "<table><tr><th>Voitures</th></tr>";
+      voitures.forEach(v => {
+        html += `<tr><td>${v}</td></tr>`;
+      });
+      html += "</table>";
+      document.getElementById("resultat").innerHTML = html;
+    }
+
+    function afficherFruitsSansDernier() {
+      let fruitsReduits = fruits.slice(0, -1);
+      let html = "<table><tr><th>Fruits (sans le dernier)</th></tr>";
+      fruitsReduits.forEach(f => {
+        html += `<tr><td>${f}</td></tr>`;
+      });
+      html += "</table>";
+      document.getElementById("resultat").innerHTML = html;
+    }
+
+    function afficherFruitsInverses() {
+      let fruitsInverses = [...fruits].sort().reverse();
+      let html = "<table><tr><th>Fruits (Z → A)</th></tr>";
+      fruitsInverses.forEach(f => {
+        html += `<tr><td>${f}</td></tr>`;
+      });
+      html += "</table>";
+      document.getElementById("resultat").innerHTML = html;
+    }
+
+    function afficherFruitsListe() {
+      let html = "<h3>Fruits</h3><ul>";
+      fruits.forEach(f => {
+        html += `<li>${f}</li>`;
+      });
+      html += "</ul>";
+      document.getElementById("resultat").innerHTML = html;
+    }
+  </script>
+
+</body>
+    <script src="Tp page.js'></script>
+</html>
